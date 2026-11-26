@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  configuration-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in (Path('.mcp.json'), Path('.claude/settings.json')):
+              json.loads(p.read_text(encoding='utf-8'))
+              print('Valid:', p)
+          PY
