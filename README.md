@@ -9,3 +9,6 @@ Includes focused agents, reusable skills, baseline rules, portable settings, Pla
 Copy `.claude/`, `.github/`, `.mcp.json`, and `CLAUDE.md` into your app repo. Review/merge existing files instead of overwriting them blindly. Then run `claude` from the app root.
 
 This is a starter: update `CLAUDE.md` with the app's verified stack, commands, architecture, and deployment rules. Never commit secrets or grant unattended production/destructive permissions.
+=======
+# claude-setup
+
